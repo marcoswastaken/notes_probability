@@ -1,0 +1,110 @@
+\documentclass[10pt]{article}
+
+\usepackage{amsmath, amssymb}
+\usepackage{multicol}
+
+\usepackage[margin=.5in]{geometry}
+
+\pagestyle{empty}
+\begin{document}
+		
+		\section{Probability}
+		
+		\subsection{Combinatorial Analysis}
+		
+		The \emph{basic principle of counting}: If an experiment consists of two phases, with $n$ possible outcomes in the first phase, and $m$ possible outcomes in the second phase for each of those outcomes, then the total possible number of outcomes is $nm$.
+		
+		There are $n!$ possible linear orderings of $n$ items.
+		
+		The number of distinct ways to choose $k$ items from $n$ without regard to order is given by
+		
+		\begin{align*}
+			{n \choose k} = \frac{n!}{(n-k)!k!}
+		\end{align*}
+		
+		For non-negative integers $n_1,n_2,\ldots, n_r$ with $\sum n_i = n$, the number distinct of ways to divide $n$ items into non-overlapping groups of sizes $n_1, n_2,\ldots, n_r$ is given by
+		
+		\begin{align*}
+			{n \choose {n_1, n_2,\ldots, n_r}} = \frac{n!}{n_1!n_2! \cdots n_r!}
+		\end{align*}
+		
+		\subsection{Axioms of Probability}
+		
+		Some notation and terminology:
+		
+		\begin{itemize}
+			\item $S$ is the set of all possible outcomes of an experiment, a.k.a. the \emph{sample space}
+			\item An \emph{event} is a subset of $S$
+			\item For any event $A$ we define $A^c$ to be the complent of $A$ in $S$
+			\item $S^c=\emptyset$ is the null set
+			\item $A\cap B$ or sometimes $AB$ is the intersection of the sets $A$ and $B$. If $A\cap B = \emptyset$ then we say that $A$ and $B$ are mutually exclusive
+		\end{itemize}
+		
+		\subsubsection*{Axioms}
+		
+		If $E$ is an event in a sample space $S$ then the probability that event $E$ occurs as the outcome of a single experiment is denoted by $P(E)$ and satisfies the following axioms
+		
+		\begin{enumerate}
+			\item $0 \leq P(E) \leq 1$
+			\item $P(S)=1$
+			\item If $\left\{ E_i \right\}_{i=1}^\infty$ is a set of pairwise mutually exclusive events then $P(\cup_{i=1}^\infty)=\sum_{i=1}^\infty P(E_i)$
+		\end{enumerate}
+		
+		\subsubsection*{Useful Results}
+		
+		\begin{align*}
+			P(A^c) = 1 - P(A)
+		\end{align*}
+		
+		\begin{align*}
+			P(A \cup B) = P(A) + P(B) - P(A \cap B)
+		\end{align*}
+		
+		(And the generalization of this, informally: add up all of the probabilities, subtract all of the double counting of intersections, add back all of the double removing of triple intersections, remove all of the restored double counting of quadruple intersections, etc.)
+		
+		If $S$ is finite and every point in $S$ is assumed to have equal probability of occurring then
+		
+		\begin{align*}
+			 P(A) = \frac{|A|}{|S|}
+		\end{align*}
+		
+		\subsection{Conditional Probability and Independence}
+		
+		\subsubsection*{Conditional Probability}
+		
+		For events $E$ and $F$, the conditional probability of $E$ occurs, given that $F$ has occurred is denoted by  $P(E|F)$ and is defined by
+		\begin{align*}
+			P(E|F) 
+				&= \frac{P(E\cap F)}{P(F)}\\
+				&= \frac{P(F|E)P(E)}{P(F)}\\
+				&= \frac{P(F|E)P(E)}{P(F|E)P(E)+P(F|E^c)P(E^c)}\\
+		\end{align*}
+		where the last line is \emph{Bayes's Formula}
+		
+		\subsubsection*{Independence}
+		
+		Two events are said to be \emph{independent} if $P(E\cap F) = P(E)P(F)$. Events that are not independent are said to be \emph{dependent}.  This generalizes to sets of events if every the probability of intersection of subsets is equal to the product of the probabilities of the individual events in the subset.
+		
+		\subsection{Random Variables}
+		
+		\subsubsection*{Random Variables}
+		
+		Given an experiment with sample space $S$, a \emph{random variable} is a real-valued function, $X$, defined on $S$. Because the value of a random variable is determined by the outcome of the experiment, we can assign probabilities to the possible values of the random variable, denoted by $P(X=x)$.
+		
+		\subsubsection*{Discrete Random Variables}
+		If the range of $X$ is countable,$\left\{ x_1, x_2, \ldots \right\}$, then $X$ is said to be discrete. In this case we can define the \emph{probability mass function} $p:\mathbb{R}\to\mathbb{R}$ of $X$ to be
+		
+		\begin{align*}
+			p(a) = P(X=a)
+		\end{align*}
+		
+		\noindent which has the following properties:
+		
+		\begin{enumerate}
+			\item $p(x_i) \geq 0$ for $i=1,2,\ldots$
+			\item $p(x) = 0$ for any other values of $x$
+			\item $\sum_{i=1}^{\infty}p(x_i) = 1$
+		\end{enumerate}
+		
+		\subsubsection*{Expected Value}
+\end{document}
