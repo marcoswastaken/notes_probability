@@ -134,7 +134,7 @@
 		
 		\noindent The \emph{standard deviation} of $X$ is the square root of the variance: $\sigma = \sqrt{\text{Var}(X)}$
 		
-		\noindent If $X$ and $Y$ are random variables, then the \emph{covariance} between them is $\text{Cov}(X,Y)=E[XY]-E[X]E[Y]$ and the \emph{correlation} between them is $\text{Cor}(X,Y) =\frac{ \text{Cov}(X,Y)}{\sqrt{\text{Var}(X)\text{Var}(Y)}}$. Units of covariance are the products of the units of $X$ and $Y$, while correlation is unit-less.
+		\noindent Given random variables, $X$ and $Y$ \emph{covariance} between them is $\text{Cov}(X,Y)=E[(X-E[X])(Y-E[Y])]=E[XY]-E[X]E[Y]$ and the \emph{correlation} between them is $\text{Cor}(X,Y) =\frac{ \text{Cov}(X,Y)}{\sqrt{\text{Var}(X)\text{Var}(Y)}}$. Units of covariance are the products of the units of $X$ and $Y$, while correlation is unit-less.
 		
 		\subsubsection*{Bernoulli  Random Variable}
 		
@@ -159,15 +159,15 @@
 		
 		\subsubsection*{Poisson Random Variable}
 		
-		A \emph{Poisson Random Variable} is a random variable $X$ that takes on one of the values $0, 1, 2, \ldots$, or the number of successes that occur in a given interval, together with a parameter $\gamma > 0$ that describes the expected number of success in that interval.
+		A \emph{Poisson Random Variable} is a random variable $X$ that takes on one of the values $0, 1, 2, \ldots$, or the number of successes that occur in a given interval, together with a parameter $\lambda > 0$ that describes the expected number of success in that interval.
 		
 		\noindent Properties of Poisson Random Variables:
 		
 		\begin{multicols}{3}
 			\begin{itemize}
-				\item $P(X=k) = e^{-\gamma} \: \dfrac{\gamma^k}{k!}$
-				\item $E[X] = \gamma$
-				\item $\text{Var}(X) = \gamma$
+				\item $P(X=k) = e^{-\lambda} \: \dfrac{\lambda^k}{k!}$
+				\item $E[X] = \lambda$
+				\item $\text{Var}(X) = \lambda$
 			\end{itemize}
 		\end{multicols}
 	
