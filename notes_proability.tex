@@ -5,22 +5,24 @@
 
 \usepackage[margin=.25in]{geometry}
 
-\pagestyle{empty}
+\pagestyle{empty} %% Suppress page numbers
+\setlength\parindent{0pt} %% Supress indentation
+
 \begin{document}
 		
 		\section{Combinatorial Analysis}
 		
-		\noindent The \emph{basic principle of counting}: If an experiment consists of two phases, with $n$ possible outcomes in the first phase, and $m$ possible outcomes in the second phase for each of those outcomes, then the total possible number of outcomes is $nm$.
+		The \emph{basic principle of counting}: If an experiment consists of two phases, with $n$ possible outcomes in the first phase, and $m$ possible outcomes in the second phase for each of those outcomes, then the total possible number of outcomes is $nm$.
 		
-		\noindent There are $n!$ possible linear orderings of $n$ items.
+		There are $n!$ possible linear orderings of $n$ items.
 		
-		\noindent The number of distinct ways to choose $k$ items from $n$ without regard to order is given by
+		The number of distinct ways to choose $k$ items from $n$ without regard to order is given by
 		
 		\begin{align*}
 			{n \choose k} = \frac{n!}{(n-k)!k!}
 		\end{align*}
 		
-		\noindent For non-negative integers $n_1,n_2,\ldots, n_r$ with $\sum n_i = n$, the number distinct of ways to divide $n$ items into non-overlapping groups of sizes $n_1, n_2,\ldots, n_r$ is given by
+		For non-negative integers $n_1,n_2,\ldots, n_r$ with $\sum n_i = n$, the number distinct of ways to divide $n$ items into non-overlapping groups of sizes $n_1, n_2,\ldots, n_r$ is given by
 		
 		\begin{align*}
 			{n \choose {n_1, n_2,\ldots, n_r}} = \frac{n!}{n_1!n_2! \cdots n_r!}
@@ -36,7 +38,7 @@
 		\begin{itemize}
 			\item $S$ is the set of all possible outcomes of an experiment, a.k.a. the \emph{sample space}
 			\item An \emph{event} is a subset of $S$
-			\item For any event $A$ we define $A^c$ to be the complent of $A$ in $S$
+			\item For any event $A$ we define $A^c$ to be the complement of $A$ in $S$
 			\item $S^c=\emptyset$ is the null set
 			\item $A\cap B$ or sometimes $AB$ is the intersection of the sets $A$ and $B$. If $A\cap B = \emptyset$ then we say that $A$ and $B$ are mutually exclusive
 		\end{itemize}
@@ -59,7 +61,7 @@
 		\end{align*}
 		
 		
-		\noindent Informally, the generalization of this formula: add up all of the individual event probabilities, then subtract all of the double counted intersections, then add back all of the twice removed triple intersections, then remove all of the twice restored double counted quadruple intersections, etc.
+		Informally, the generalization of this formula: add up all of the individual event probabilities, then subtract all of the double counted intersections, then add back all of the twice removed triple intersections, then remove all of the twice restored double counted quadruple intersections, etc.
 		
 		If $S$ is finite and every point in $S$ is assumed to have equal probability of occurring then
 		
@@ -108,7 +110,7 @@
 			E[X] = \sum_{xp(x)>0}xp(x)
 		\end{align*}
 		
-		\noindent Some useful properties, for a random variable $X$ with non-zero outputs $\left\{ x_1, x_2, \ldots \right\}$: 
+		Some useful properties, for a random variable $X$ with non-zero outputs $\left\{ x_1, x_2, \ldots \right\}$: 
 		
 		\begin{itemize}
 			\item If $g$ is any real value function then $E[g(X)] =  \sum_{i=1}^{\infty}g(x_i)p(x_i)$
@@ -119,7 +121,7 @@
 		
 		If $X$ is a random variable with \emph{mean} $\mu=E[X]$ then the variance of $X$, denoted by $\text{Var}(X)$, is defined to be $\text{Var}(X) = E[(X-\mu)^2]$
 		
-		\noindent Some useful formulas that follow from this definition:
+		Some useful formulas that follow from this definition:
 		\begin{multicols}{2}
 			\begin{itemize}
 				\item $\text{Var}(X) = E[X^2] - (E[X])^2$
@@ -127,9 +129,9 @@
 			\end{itemize}
 		\end{multicols}
 		
-		\noindent The \emph{standard deviation} of $X$ is the square root of the variance: $\sigma = \sqrt{\text{Var}(X)}$
+		The \emph{standard deviation} of $X$ is the square root of the variance: $\sigma = \sqrt{\text{Var}(X)}$
 		
-		\noindent Given random variables, $X$ and $Y$:
+		Given random variables, $X$ and $Y$:
 		\begin{itemize}
 			\item $\text{Cov}(X,Y)=E[(X-E[X])(Y-E[Y])]=E[XY]-E[X]E[Y]$ and
 			\begin{itemize}
@@ -148,11 +150,11 @@
 			p(0) = P(X=0) = 1 - p  && p(0) = P(X=1) = p
 		\end{align*}
 		
-		\noindent where $p$ is the probability of success in a given trial.
+		where $p$ is the probability of success in a given trial.
 		\subsection*{Binomial Random Variable}
 		A \emph{binomial random variable} is a random variable $X$ that represents the number of successes that occur in $n$ Bernoulli trials, each with probability of success $p$.
 		
-		\noindent Properties of Binomial Random Variables:
+		Properties of Binomial Random Variables:
 		\begin{multicols}{3}
 			\begin{itemize}
 				\item $P(X=k) = {n \choose k} p^{k} (1-p)^{n-k}$
@@ -166,7 +168,7 @@
 		
 		A \emph{Poisson Random Variable} is a random variable $X$ that takes on one of the values $0, 1, 2, \ldots$, or the number of successes that occur in a given interval, together with a parameter $\lambda > 0$ that describes the expected number of success in that interval.
 		
-		\noindent Properties of Poisson Random Variables:
+		Properties of Poisson Random Variables:
 		
 		\begin{multicols}{3}
 			\begin{itemize}
@@ -179,7 +181,7 @@
 		\subsection*{Geometric Random Variable}
 		A \emph{Geometric Random Variable} is a random variable $X$ that takes on one of the values $0, 1, 2, \ldots$, or the number of trials required until a success occurs, when repeatedly performing a Bernoulli trial with probability of success $p$.
 		
-		\noindent Properties of Geometric Random Variables:
+		Properties of Geometric Random Variables:
 		\begin{multicols}{3}
 			\begin{itemize}
 				\item $P(X=k) = p(1-p)^{k-1}$
@@ -191,7 +193,7 @@
 		\subsection*{Negative Binomial Random Variable}
 		
 		Suppose that independent Bernoulli trials, with proability of success $p$, are perfomed until $r$ successes occur. A \emph{negative binomial random variable} is a random variable $X$ that takes on one of the values $0, 1, 2, \ldots$, or the number of trials required.
-		\noindent Properties of Negative Binomial Random Variables:
+		Properties of Negative Binomial Random Variables:
 		
 		\begin{multicols}{3}
 			\begin{itemize}
@@ -204,7 +206,7 @@
 		\subsection*{Hypergeometric Random Variables}
 		A \emph{Hypergeometric Random Variable} is a random variable $X$ that takes on one of the values $0, 1, 2, \ldots$, describing the number of successes in $n$ draws, without replacement, from a finite population of size $N$, where exactly $K$ members are successes. (In contrast, a binomial random variable can be thought of as describing the probability of $k$ successes with replacement.)
 		
-			\noindent Properties of Hypergeometric Random Variables:
+			Properties of Hypergeometric Random Variables:
 		\begin{multicols}{3}
 			\begin{itemize}
 				\item $P(X=k) = \dfrac{{K \choose k} {{N-k} \choose {n-k}}}{{N \choose n}}$
@@ -212,11 +214,116 @@
 				\item $\text{Var}(X)= n \frac{K}{N} \frac{N-K}{N} \frac{N-n}{n-1}$
 			\end{itemize}
 		\end{multicols}
-		\noindent Note: $\text{Var}(X) \approx n(p)(1-p)$ when $N$ is large relative to $n$, where $p=K/N$.
+		Note: $\text{Var}(X) \approx n(p)(1-p)$ when $N$ is large relative to $n$, where $p=K/N$.
 		
 		\subsection*{Expected Value and Sums of Random Variables}
 		If $X_1, X_2, \ldots, X_n$ are random variables then
 		\begin{align*}
 			E \left[ \sum_{i=1}^{n} X_i \right] = \sum_{i=1}^{n} E[X_i]
 		\end{align*}
+		
+		\newpage
+		
+		\section{Continuous Random Variables}
+		We say that $X$ is a \emph{continuous random variable} if there exists a non-negative function $f$, defined on $\mathbb{R}$, with the property that, for any measurable set $B$ of real numbers, $P\left\{ X \in B \right\} = \int_{B} f(x)\: dx$, and $\int_{-\infty}^{\infty}f(x)\:dx = 1$. The function $f$ is called the \emph{probability density function} of the random variable $X$.
+		
+		The \emph{cumulative distribution function}, or just \emph{distribution function} of a continuous random variable is $F_X(x) = \int_{-\infty}^{x}f(x)\: dx$.
+		
+		\subsection*{Expectation and Variance}
+		If $X$ is a continuous random variable with probability density function $f(x)$ then the \emph{expected value} of $X$, denoted as $E[X]$ is defined by
+		
+		\begin{align*}
+			E[X] = \int_{-\infty}^{\infty} xf(x)\:dx
+		\end{align*}
+		
+		A useful property that follows from this definition is that, for any function $g$, $E[g(X)]=E[X] = \int_{-\infty}^{\infty} g(x)f(x)\:dx$ 
+		
+		If $X$ is a random variable with \emph{mean} $\mu=E[X]$ then the variance of $X$, denoted by $\text{Var}(X)$, is defined to be $\text{Var}(X) = E[(X-\mu)^2]$
+		
+		This definition is identical to the discrete case, and the same properties hold:
+		\begin{multicols}{2}
+			\begin{itemize}
+				\item $\text{Var}(X) = E[X^2] - (E[X])^2$
+				\item $\text{Var}(aX + b) = a^2 \text{Var}(x)$
+			\end{itemize}
+		\end{multicols}
+		
+		\subsection*{Uniform Random Variable}
+		In general, we say that $X$ is a \emph{Uniform Random Variable} on the interval $(\alpha, \beta)$ if the probability of outcomes is even distributed among all outcomes in that interval. Properties of a Uniform Random Variable:
+		\begin{multicols}{3}
+			\begin{itemize}
+				\item $f(x) = 
+					\begin{cases} 
+						\dfrac{1}{\beta - \alpha} & \text{if } \alpha < x < \beta\\
+						0 & \text{otherwise}
+					\end{cases}$
+				\item $E(x) = \dfrac{\alpha + \beta}{2}$
+				\item $\text{Var}(X) = \dfrac{(\beta-\alpha)^2}{12}$
+			\end{itemize}
+		\end{multicols}
+		
+		\subsection*{Normal Random Variable}
+		In general, we say that $X$ is a \emph{Normal Random Variable} if the probability of outcomes is normally distributed with parameters \(\mu\) and \(\sigma^2\). Properties of a Normal Random Variabls:
+		\begin{multicols}{3}
+			\begin{itemize}
+				\item $f(x) = \dfrac{1}{\sigma\sqrt{2\pi}}e^{-(x-\mu)^2 / 2\sigma^2}$
+				\item $E(x) = \mu$
+				\item $\text{Var}(X) = \sigma^2$
+			\end{itemize}
+		\end{multicols}
+		If \(X\) is normal, with mean \(\mu\) and variance \(\sigma^2\) then $Z=\frac{X-\mu}{\sigma}$ is a \emph{standard} normal random variable with mean \(0\) and variance \(1\).
+		
+		\subsection*{Exponential Random Variable}
+		An \emph{Exponential Random Variable} is a random variable whose probability distribution models the distance between evens in a Poisson point process. Properties of an Exponential Random Variable:
+		\begin{multicols}{3}
+			\begin{itemize}
+				\item $f(x) = 
+				\begin{cases} 
+					\lambda e ^ {-\lambda x} & \text{if }  x \geq 0 \\
+					0 & \text{otherwise}
+				\end{cases}$
+				\item $E(x) = \dfrac{1}{\lambda}$
+				\item $\text{Var}(X) = \dfrac{1}{\lambda^2}$
+			\end{itemize}
+		\end{multicols}
+		A key property of exponential random variables is that they are \emph{memoryless}, so \(P\left\{X>s+t \mid X >t\right\} = P\left\{X > s \right\}\)
+		
+		\subsection*{Applications and Other Common Distributions}
+		\subsubsection*{Failure Rate}
+		Let \(X\) be a non-negative random variable that represents rate of survivors to time \(t\) during the next instant in time, with probability density function \(f(t)\) and cumulative density function \(F(t)\), then the \emph{failure rate} (or \emph{hazard rate}) is defined as \(h(t) = \dfrac{f(t)}{1-F(t)}\). For small values of \(dt\), \(h(t)\: dt\) is approximately the probability that a \(t\)-unit-old item will die within the next \(dt\)-time.
+		
+		In the specail case that $F$ is the exponential distribution with parameter \(\lambda\), then the failure rate becomes constant with \(h(t)=\gamma\).
+		
+		\newpage
+		
+		\subsubsection*{Gamma Distribution}
+		A \emph{gamma distribution} with shape parameter \(\alpha\) and scale parameter \(\lambda\) is defined in terms of the gamma function: \(\Gamma(\alpha)=\displaystyle\int_{0}^{\infty}e^{-x}x^{\alpha-1}\: dx\). 
+		
+		Gamma random variables are commonly used in modeling waiting times, or the distance between events in a Poisson point process.
+		
+		Properties of a Gamma Random Variable:
+		\begin{multicols}{3}
+			\begin{itemize}
+				\item $f(x) = \dfrac{\lambda e^{\lambda x}(\lambda x)^{\alpha - 1}}{\Gamma(\alpha)}$
+				\item $E(x) = \dfrac{\alpha}{\lambda}$
+				\item $\text{Var}(X) = \frac{\alpha}{\lambda^2}$
+			\end{itemize}
+		\end{multicols}
+		
+		\subsubsection*{Beta Distribution}
+		A \emph{beta distribution} with parameters \(a\) and \(b\) is defined in terms of the beta function: \(B(a,b)=\displaystyle\int_{0}^{1}x^{a-1}(1-x)^{b-1}\: dx\). 
+		
+		Beta random variables are commonly used in modeling the behavior of random variables limited to intervals of finite length, or the randome behavior of percentages or proportions.
+		
+		Properties of a Beta Random Variable for \(0 \leq x \leq 1\):
+		\begin{multicols}{3}
+			\begin{itemize}
+				\item $f(x) = \dfrac{1}{B(a,b)}x^{a-1}(1-x)^{b-1}$
+				\item $E(x) = \dfrac{a}{a+b}$
+				\item $\text{Var}(X) = \dfrac{ab}{(a+b)^2(a+b+1)}$
+			\end{itemize}
+		\end{multicols}
+		When \(a=b\) the beta density is symmetric about \(\frac{1}{2}\), and when \(b>a\) the density is skewed to the left (meaning smaller values are more likely).
+		
+		One connection btween gamma and beta distributions is that \(B(a,b)=\dfrac{\Gamma(a)\Gamma(b)}{\Gamma(a+b)}\)
 \end{document}
