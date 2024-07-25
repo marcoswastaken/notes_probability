@@ -273,6 +273,8 @@
 		\end{multicols}
 		If \(X\) is normal, with mean \(\mu\) and variance \(\sigma^2\) then $Z=\frac{X-\mu}{\sigma}$ is a \emph{standard} normal random variable with mean \(0\) and variance \(1\).
 		
+		A normal distribution can give a good approximation for a binomial random variable when \(np(1-p) \geq 10\).
+		
 		\subsection*{Exponential Random Variable}
 		An \emph{Exponential Random Variable} is a random variable whose probability distribution models the distance between evens in a Poisson point process. Properties of an Exponential Random Variable:
 		\begin{multicols}{3}
@@ -292,7 +294,7 @@
 		\subsubsection*{Failure Rate}
 		Let \(X\) be a non-negative random variable that represents rate of survivors to time \(t\) during the next instant in time, with probability density function \(f(t)\) and cumulative density function \(F(t)\), then the \emph{failure rate} (or \emph{hazard rate}) is defined as \(h(t) = \dfrac{f(t)}{1-F(t)}\). For small values of \(dt\), \(h(t)\: dt\) is approximately the probability that a \(t\)-unit-old item will die within the next \(dt\)-time.
 		
-		In the specail case that $F$ is the exponential distribution with parameter \(\lambda\), then the failure rate becomes constant with \(h(t)=\gamma\).
+		In the special case that $F$ is the exponential distribution with parameter \(\lambda\), then the failure rate becomes constant with \(h(t)=\gamma\).
 		
 		\newpage
 		
@@ -325,5 +327,5 @@
 		\end{multicols}
 		When \(a=b\) the beta density is symmetric about \(\frac{1}{2}\), and when \(b>a\) the density is skewed to the left (meaning smaller values are more likely).
 		
-		One connection btween gamma and beta distributions is that \(B(a,b)=\dfrac{\Gamma(a)\Gamma(b)}{\Gamma(a+b)}\)
+		One connection between gamma and beta distributions is that \(B(a,b)=\dfrac{\Gamma(a)\Gamma(b)}{\Gamma(a+b)}\)
 \end{document}
