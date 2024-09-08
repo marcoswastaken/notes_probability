@@ -1,12 +1,19 @@
 \documentclass[10pt]{article}
 
-\usepackage{amsmath, amssymb}
+\usepackage{amsmath, amssymb, amsthm}
 \usepackage{multicol}
 
 \usepackage[margin=.25in]{geometry}
 
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+\theoremstyle{theorem}
+\newtheorem*{theorem}{Theorem}
+
+
 \pagestyle{empty} %% Suppress page numbers
 \setlength\parindent{0pt} %% Supress indentation
+
 
 \begin{document}
 		
@@ -328,4 +335,36 @@
 		When \(a=b\) the beta density is symmetric about \(\frac{1}{2}\), and when \(b>a\) the density is skewed to the left (meaning smaller values are more likely).
 		
 		One connection between gamma and beta distributions is that \(B(a,b)=\dfrac{\Gamma(a)\Gamma(b)}{\Gamma(a+b)}\)
+		
+		\section{Limit Theorems}
+		
+		\subsection*{Chebyshev's Inequality and the Weak Law of Large Numbers}
+		
+		\begin{theorem}[Markov's Inequality]
+			If \(X\) is a random variable that takes on only non-negative values, then, for any \(a>0\), 
+			\begin{align*}
+				P\left\{X\geq a\right\} \leq \dfrac{E[X]}{a}
+			\end{align*}
+			
+		\end{theorem}
+		
+		\begin{theorem}[Chebyshev's Inequality]
+			If \(X\) is a random variable with finite mean \(\mu\) and variance \(\sigma^2\), then, for any value \(k>0\)
+			\begin{align*}
+				P\left\{| X-\mu | \geq k\right\} \leq \frac{\sigma^2}{k^2}
+			\end{align*}
+		\end{theorem}
+		
+		Note: If \(\bar{X}\) is the sample mean of \(n\)  independent and identically distributed observations from a populations with finite mean \(\mu\) and variance \(\sigma^2\), then we can apply Chebyshev's Inequality with \(E[\bar{X}]=\mu\) and \(\text{Var}(\bar{X})=\sigma^2/n\) to conclude that
+		\begin{align*}
+			P\left\{| \bar{X}-\mu | \geq k\right\} \leq \frac{\sigma^2}{nk^2}
+		\end{align*}
+		As \(n\) becomes large, the upper bound on this probability reaches zero. This leads to the proof of the Weak Law of Large Numbers.
+		
+		\begin{theorem}[The Weak Law of Large Numbers]
+			Let \(X_1, X_2,\ldots\) be a sequence of independent and identically distributed random variables, each having finite mean \(E[X_i]=\mu_i\). Then, for any \(\epsilon > 0\),
+			\begin{align*}
+				P \left\{ \left|\frac{X_1+X_2+\ldots + X_n}{n}-\mu \right| \geq \epsilon \right\} \to 0 \text{ as } n \to \infty
+			\end{align*}
+		\end{theorem}
 \end{document}
