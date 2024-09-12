@@ -362,9 +362,19 @@
 		As \(n\) becomes large, the upper bound on this probability reaches zero. This leads to the proof of the Weak Law of Large Numbers.
 		
 		\begin{theorem}[The Weak Law of Large Numbers]
-			Let \(X_1, X_2,\ldots\) be a sequence of independent and identically distributed random variables, each having finite mean \(E[X_i]=\mu_i\). Then, for any \(\epsilon > 0\),
+			Let \(X_1, X_2,\ldots\) be a sequence of independent and identically distributed random variables, each having finite mean \(E[X_i]=\mu\) and finite variance \(\sigma^2\). Then, for any \(\epsilon > 0\),
 			\begin{align*}
 				P \left\{ \left|\frac{X_1+X_2+\ldots + X_n}{n}-\mu \right| \geq \epsilon \right\} \to 0 \text{ as } n \to \infty
 			\end{align*}
+		\end{theorem}
+		
+		\subsection*{The Central Limit Theorem}
+		
+		\begin{theorem}[The Central Limit Theorem]
+			Let \(X_1, X_2,\ldots\) be a sequence of independent and identically distributed random variables, each having finite mean \(E[X_i]=\mu\) and finite variance \(\sigma^2\). Then the distribution of
+			\begin{align*}
+				\frac{X_1 + X_2 + \cdots + X_n - n\mu}{\sigma \sqrt{n}}
+			\end{align*}
+			tends to the standard normal as \(n \to \infty\).
 		\end{theorem}
 \end{document}
