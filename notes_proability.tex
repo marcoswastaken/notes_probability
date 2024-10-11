@@ -1,6 +1,7 @@
 \documentclass[10pt]{article}
 
 \usepackage{amsmath, amssymb, amsthm}
+\usepackage{enumerate}
 \usepackage{multicol}
 
 \usepackage[margin=.25in]{geometry}
@@ -377,4 +378,19 @@
 			\end{align*}
 			tends to the standard normal as \(n \to \infty\).
 		\end{theorem}
+		
+		\section{Additional Topics}
+		\subsection*{The Poisson Process}
+		A function \(f\) is said to be \(o(h)\) if \(\lim\limits_{h \to 0}\frac{f(h)}{h}=0\). Intuitively, this means that for small values of \(h\), \(f(h)\) is small relative to \(h\).
+		
+		\begin{definition}
+			Consider events that are occurring at random points in time, and let \(N(t)\) be the number of events that occurs in the interval \([0,t]\). The collection of random variables \(\left\{N(t), t \geq 0\right\}\) is a \emph{Poisson process having rate \(\lambda>0\)} if the folowing conditions are satisfied:
+			\begin{enumerate}[(i)]
+				\item \(N(0)=0\). The process starts at time \(0\).
+				\item The number of events that occur in disjoint time intervals are independent.
+				\item The distribution of the number of events that occur in a given interval depends only on the length of that interval (and not on its location)
+				\item \(P\left\{N(h)=1\right\} = \lambda h + o(h)\)
+				\item \(P\left\{N(h)\geq 2\right\} = o(h)\)
+			\end{enumerate}
+		\end{definition}
 \end{document}
